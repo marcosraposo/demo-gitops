@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: ocp-etcd-backup
+  namespace: argocd
+spec:
+  generators:
+  # Only select external clusters, excludes local cluster
+  - clusters:
+      selector:
+        matchLabels:
+          argocd.argoproj.io/secret-type: cluster
+  template:
+    metadata:
+      name: "{{nameNormalized}}-backup-etcd"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/marcosposo/gitops-demo.git
+        targetRevision: main
+        path: applicationsets/backup-etcd/manifests
+      destination:
+        server: "{{server}}"
+        namespace: ocp-etcd-backup
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
