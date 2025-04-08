@@ -16,7 +16,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/marcosraposo/gitops-demo.git
+        repoURL: https://github.com/marcosraposo/demo-gitops.git
         targetRevision: main
         path: applicationsets/backup-etcd/manifests
       destination:

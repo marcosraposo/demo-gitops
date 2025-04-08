@@ -6,8 +6,6 @@ metadata:
   labels:
     app: openshift-backup
   annotations:
-    openshift.io/node-selector: ''
-    pod-security.kubernetes.io/enforce: privileged
     openshift.io/description: "Openshift Backup Automation Tool"
     openshift.io/display-name: "Backup ETCD Automation"
 spec:
