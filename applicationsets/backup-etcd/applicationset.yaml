@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: ocp-etcd-backup
-  namespace: argocd
+  namespace: openshift-gitops
 spec:
   generators:
   # Only select external clusters, excludes local cluster
@@ -16,13 +16,15 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/marcosposo/gitops-demo.git
+        repoURL: https://github.com/marcosraposo/gitops-demo.git
         targetRevision: main
         path: applicationsets/backup-etcd/manifests
       destination:
         server: "{{server}}"
         namespace: ocp-etcd-backup
       syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
         automated:
           selfHeal: true
           prune: true
