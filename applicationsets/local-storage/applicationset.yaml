@@ -24,6 +24,8 @@ spec:
         server: "{{server}}"
         namespace: openshift-local-storage
       syncPolicy:
+        syncOptions:
+        - CreateNamespace=true      
         automated:
           selfHeal: true
           prune: true
