@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: openshift-local-storage
+  namespace: openshift-gitops
+spec:
+  generators:
+  # Only select external clusters, excludes local cluster
+  - clusters:
+      selector:
+        matchLabels:
+          argocd.argoproj.io/secret-type: cluster
+          odf: "true"
+  template:
+    metadata:
+      name: "{{nameNormalized}}-openshift-local-storage"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/marcosraposo/demo-gitops.git
+        targetRevision: main
+        path: applicationsets/local-storage/operator/overlays/stable
+      destination:
+        server: "{{server}}"
+        namespace: openshift-local-storage
+      syncPolicy:
+        automated:
+          selfHeal: true
+          prune: true
