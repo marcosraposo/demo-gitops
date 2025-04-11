@@ -4,3 +4,4 @@ metadata:
   name: openshift-logging
   labels:
     openshift.io/cluster-monitoring: "true"
+    openshift.io/cluster-logging: "true"
