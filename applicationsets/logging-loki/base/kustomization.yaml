@@ -5,7 +5,6 @@ resources:
   - namespace-logging.yaml
   - namespace-operator-loki.yaml
   - subscription-logging.yaml
-  - subscription-loki.yaml
-  - local-volume.yaml
+  - subscription-loki.yaml  
   - operator-group-loki.yaml
   - operator-group-logging.yaml
