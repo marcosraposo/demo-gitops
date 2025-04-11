@@ -1,12 +1,8 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:   
-  labels:
-    operators.coreos.com/cluster-logging.openshift-logging: ''
   name: cluster-logging
   namespace: openshift-logging
-  resourceVersion: '1829143'
-  uid: 3d6c2480-908c-4c22-a84f-dcca6086c5b8
 spec:
   channel: stable-6.2
   installPlanApproval: Automatic
