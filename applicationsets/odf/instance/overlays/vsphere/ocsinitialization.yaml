@@ -4,4 +4,4 @@ metadata:
   name: ocsinit
   namespace: openshift-storage
 spec:
-  enableCephTools: true
+  enableCephTools: "true"

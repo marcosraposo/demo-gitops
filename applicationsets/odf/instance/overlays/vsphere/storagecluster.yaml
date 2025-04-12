@@ -29,7 +29,7 @@ spec:
           resources:
             requests:
               storage: 500Gi
-          storageClassName: thin
+          storageClassName: thin-csi
           volumeMode: Block
         status: {}
       name: ocs-deviceset-thin
