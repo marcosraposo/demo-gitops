@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: openshift-storage-create-ns
+  name: openshift-data-foudation-operator
   namespace: openshift-gitops
 spec:
   generators:
@@ -13,13 +13,13 @@ spec:
           odf_type: vsphere
   template:
     metadata:
-      name: "{{nameNormalized}}-openshift-storage-create-ns"
+      name: "{{nameNormalized}}-openshift-data-foudation-operator"
     spec:
       project: default
       source:
         repoURL: https://github.com/marcosraposo/demo-gitops.git
         targetRevision: main
-        path: "applicationsets/openshift-storage-create-ns/manifests/"
+        path: "applicationsets/openshift-data-foudation-operator/manifests/"
       destination:
         server: "{{server}}"
         namespace: openshift-storage
