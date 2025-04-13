@@ -19,7 +19,7 @@ spec:
       source:
         repoURL: https://github.com/marcosraposo/demo-gitops.git
         targetRevision: main
-        path: "applicationsets/openshift-storage-create-ns/manifests"
+        path: "applicationsets/openshift-storage-create-ns/manifests/"
       destination:
         server: "{{server}}"
         namespace: openshift-storage
