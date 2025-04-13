@@ -5,6 +5,6 @@ kind: Kustomization
 
 
 resources:
-  - ../../../operator/base
+  #- ../../../operator/base
   - ../../../instance/overlays/vsphere
   - ../../../config-helpers/node-labeler/base
