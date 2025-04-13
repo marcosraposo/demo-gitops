@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: openshift-data-foudation-operator
+  name: openshift-data-foudation-instance
   namespace: openshift-gitops
 spec:
   generators:
@@ -13,13 +13,13 @@ spec:
           odf_type: vsphere
   template:
     metadata:
-      name: "{{nameNormalized}}-openshift-data-foudation-operator"
+      name: "{{nameNormalized}}-openshift-data-foudation-instance"
     spec:
       project: default
       source:
         repoURL: https://github.com/marcosraposo/demo-gitops.git
         targetRevision: main
-        path: "applicationsets/openshift-data-foudation-operator/aggregate/overlays/{{metadata.labels.odf_type}}"
+        path: "applicationsets/openshift-data-foudation-instance/aggregate/overlays/{{metadata.labels.odf_type}}"
       destination:
         server: "{{server}}"
         namespace: openshift-storage
