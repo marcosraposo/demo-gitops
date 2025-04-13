@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: openshift-storage-create-ns
+  namespace: openshift-gitops
+spec:
+  generators:
+  # Only select external clusters, excludes local cluster
+  - clusters:
+      selector:
+        matchLabels:
+          argocd.argoproj.io/secret-type: cluster
+          odf_type: vsphere
+  template:
+    metadata:
+      name: "{{nameNormalized}}-openshift-storage-create-ns"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/marcosraposo/demo-gitops.git
+        targetRevision: main
+        path: "applicationsets/openshift-storage-create-ns"
+      destination:
+        server: "{{server}}"
+        namespace: openshift-storage
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+        automated:
+          selfHeal: true
+          prune: true
