@@ -28,3 +28,18 @@ spec:
   name: odf-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
+
+---
+
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:    
+  name: odf-operator
+  namespace: openshift-storage
+spec:
+  channel: stable-4.17
+  installPlanApproval: Automatic
+  name: odf-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: odf-operator.v4.17.6-rhodf
