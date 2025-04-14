@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+
+
+resources:
+
+  - ../helper
+  - obc.yaml   
+  - lokistack.yaml
+  - cluster-log-forward.yaml
+  - serviceaccount-rbac.yaml

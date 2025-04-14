@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: openshift-logging
+  name: openshift-logging-loki-instance
   namespace: openshift-gitops
 spec:
   generators:
@@ -13,13 +13,13 @@ spec:
           logging_loki: "true"
   template:
     metadata:
-      name: "{{nameNormalized}}-openshift-logging"
+      name: "{{nameNormalized}}-openshift-logging-loki-instance"
     spec:
       project: default
       source:
         repoURL: https://github.com/marcosraposo/demo-gitops.git
         targetRevision: main
-        path: applicationsets/logging-loki/base/
+        path: applicationsets/openshift-logging-loki-instance/base/
       destination:
         server: "{{server}}"
         namespace: openshift-logging
