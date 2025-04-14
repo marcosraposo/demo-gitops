@@ -6,8 +6,5 @@ namespace: openshift-operators-redhat
 resources:
   - namespace-operator-loki.yaml
   - subscription-loki.yaml
-  - observability-operator.yaml
-  - observability-uplugin.yaml
-  - operator-group-logging.yaml
-  - subscription-logging.yaml
+
   
