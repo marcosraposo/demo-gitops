@@ -5,7 +5,8 @@ metadata:
   namespace: openshift-operators-redhat 
 spec:
   charsion: operators.coreos.com/v1alpha1
-  channel: stable 
+  channel: stable
+  installPlanApproval: Automatic 
   name: loki-operator
   source: redhat-operators 
   sourceNamespace: openshift-marketplace
