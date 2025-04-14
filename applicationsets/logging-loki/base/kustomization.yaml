@@ -8,4 +8,10 @@ resources:
   - operator-group-logging.yaml
   - subscription-logging.yaml
   - namespace-operator-loki.yaml 
-  - subscription-loki.yaml   
+  - subscription-loki.yaml
+  - obc.yaml   
+  - lokistack.yaml
+  - cluster-log-forward.yaml
+  - serviceaccount-rbac.yaml
+  - observability-operator.yaml
+  - observability-uplugin.yaml

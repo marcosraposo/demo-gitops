@@ -5,6 +5,7 @@ kind: Kustomization
 
 resources:
 
+  - create-loki-bucket-secret-cr.yaml
   - create-loki-bucket-secret-crb.yaml
   - create-loki-bucket-secret-sa.yaml
   - create-loki-bucket-secret-job.yaml
