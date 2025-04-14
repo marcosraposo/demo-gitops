@@ -38,8 +38,6 @@ spec:
     tls:
       caName: openshift-service-ca.crt
   storageClassName: thin-csi
-  tenants:
-    mode: openshift-logging
   template:
     compactor:
       nodeSelector:
