@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: openshift-logging-observability
+  namespace: openshift-gitops
+spec:
+  generators:
+  # Only select external clusters, excludes local cluster
+  - clusters:
+      selector:
+        matchLabels:
+          argocd.argoproj.io/secret-type: cluster
+          logging_loki: "true"
+  template:
+    metadata:
+      name: "{{nameNormalized}}-openshift-logging-observability"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/marcosraposo/demo-gitops.git
+        targetRevision: main
+        path: applicationsets/openshift-logging-observability/manifests/
+      destination:
+        server: "{{server}}"
+        namespace: openshift-operators
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true      
+        automated:
+          selfHeal: true
+          prune: true
