@@ -4,7 +4,7 @@ kind: Kustomization
 
 
 resources:
-  - ../../helper/
+  - ../helper/
   - namespace-logging.yaml
   - operator-group-logging.yaml
   - subscription-logging.yaml
