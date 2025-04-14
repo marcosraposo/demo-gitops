@@ -25,7 +25,8 @@ spec:
         namespace: openshift-cluster-observability-operator
       syncPolicy:
         syncOptions:
-        - CreateNamespace=true      
+        - CreateNamespace=true    
+        - PruneLast=true
         automated:
           selfHeal: true
           prune: true
