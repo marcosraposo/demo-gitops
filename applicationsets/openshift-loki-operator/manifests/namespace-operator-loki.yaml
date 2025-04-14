@@ -4,4 +4,6 @@ metadata:
   name: openshift-operators-redhat
   labels:
     openshift.io/cluster-monitoring: "true"
+
+
     
