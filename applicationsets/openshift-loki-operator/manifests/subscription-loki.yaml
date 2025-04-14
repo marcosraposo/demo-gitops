@@ -16,8 +16,7 @@ kind: Subscription
 metadata:
   name: loki-operator
   namespace: openshift-operators-redhat 
-spec:
-  charsion: operators.coreos.com/v1alpha1
+spec:  
   channel: stable-6.2
   installPlanApproval: Automatic 
   name: loki-operator

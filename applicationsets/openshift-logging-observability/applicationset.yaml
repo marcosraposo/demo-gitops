@@ -22,7 +22,7 @@ spec:
         path: applicationsets/openshift-logging-observability/manifests/
       destination:
         server: "{{server}}"
-        namespace: openshift-operators
+        namespace: openshift-cluster-observability-operator
       syncPolicy:
         syncOptions:
         - CreateNamespace=true      
