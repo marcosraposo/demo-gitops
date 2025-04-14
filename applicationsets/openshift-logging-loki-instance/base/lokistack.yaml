@@ -27,7 +27,7 @@ spec:
   rules:
     enabled: true
   replicationFactor: 1
-  size: 1x.demo
+  size: 1x.pico
   storage:
     schemas:
       - effectiveDate: '2025-04-09'
