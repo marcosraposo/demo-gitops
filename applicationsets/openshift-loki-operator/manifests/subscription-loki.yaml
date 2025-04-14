@@ -8,7 +8,7 @@ spec:
 metadata:
   name: loki-operator
   namespace: openshift-operators-redhat 
-spec:
+
   channel: stable 
   name: loki-operator
   source: redhat-operators 
