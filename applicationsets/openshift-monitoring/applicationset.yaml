@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: openshift-monitoring
+  namespace: openshift-gitops
+spec:
+  generators:
+  # Only select external clusters, excludes local cluster
+  - clusters:
+      selector:
+        matchLabels:
+          argocd.argoproj.io/secret-type: cluster
+  template:
+    metadata:
+      name: "{{nameNormalized}}-openshift-monitoring"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/marcosraposo/demo-gitops.git
+        targetRevision: main
+        path: applicationsets/openshift-monitoring/manifests
+      destination:
+        server: "{{server}}"
+        namespace: openshift-monitoring
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+        automated:
+          selfHeal: true
+          prune: true
