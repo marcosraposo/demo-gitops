@@ -45,7 +45,7 @@ spec:
       forceCollection: false
       imageFlavor: Regular
     taintToleration: TolerateTaints
-  clusterName: "{{server}}"
+  clusterName: "{{.server}}"
   centralEndpoint: 'https://central-stackrox.apps.s8m0s7d9k0x1e3j.j1gv.p1.openshiftapps.com'
 
 
