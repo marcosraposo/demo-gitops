@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: openshift-secured
+  namespace: openshift-gitops
+spec:
+  generators:
+  # Only select external clusters, excludes local cluster
+  - clusters:
+      selector:
+        matchLabels:
+          argocd.argoproj.io/secret-type: cluster
+          acs: managed 
+  template:
+    metadata:
+      name: "{{nameNormalized}}-openshift-managed"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/marcosraposo/demo-gitops.git
+        targetRevision: main
+        path: applicationsets/secured/
+      destination:
+        server: "{{server}}"
+        namespace: stackrox
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+        automated:
+          selfHeal: true
+          prune: true
