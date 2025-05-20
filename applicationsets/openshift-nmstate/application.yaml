@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openshift-nmstate
+spec:
+  destination:
+    namespace: openshift-nmstate
+    server: https://kubernetes.default.svc
+  source:
+    path: application/openshift-nmstate/manifests/
+    repoURL: https://git.detran.ba.gov.br/PlataformaBaixa/Gitops-infra
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
