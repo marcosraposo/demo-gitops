@@ -45,7 +45,11 @@ spec:
       forceCollection: false
       imageFlavor: Regular
     taintToleration: TolerateTaints
+<<<<<<< HEAD
   clusterName: "{{server}}"
+=======
+  clusterName: "{{.destination.server}}"
+>>>>>>> c5ddf61382fd059cf9ae422c50ea7b87c5dbe053
   centralEndpoint: 'https://central-stackrox.apps.s8m0s7d9k0x1e3j.j1gv.p1.openshiftapps.com'
 
 
