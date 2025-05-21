@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   source:
     path: application/openshift-nmstate/manifests/
-    repoURL: https://git.detran.ba.gov.br/PlataformaBaixa/Gitops-infra
+    repoURL: https://github.com/marcosraposo/demo-gitops.git
     targetRevision: HEAD
   sources: []
   project: default
