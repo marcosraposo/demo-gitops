@@ -1,0 +1,21 @@
+- op: add
+  path: /spec/identityProviders/-
+  value:
+    name: ldap
+      attributes:
+        email:
+          - mail
+        id:
+          - sAMAccountName
+        name:
+          - cn
+        preferredUsername:
+          - sAMAccountName
+      bindDN: 'CN=User OpenShift RedHat - AD,OU=Usuários de Serviços Administrativos,OU=ADMINISTRADORES,OU=DETRAN,DC=DETRANDOM,DC=TRAN'
+      bindPassword:
+        name: ldap-secret
+      insecure: true
+      url: 'ldap://detrandom.tran:389/OU=DETRAN,DC=DETRANDOM,DC=TRAN?sAMAccountName?sub?(&(objectclass=*)(memberOf:1.2.840.113556.1.4.1941:=CN=OSRH-AUTENTICACAO,OU=ADMINISTRADORES,OU=DETRAN,DC=DETRANDOM,DC=TRAN))'
+    mappingMethod: claim
+    name: AD-DETRAN
+    type: LDAP
