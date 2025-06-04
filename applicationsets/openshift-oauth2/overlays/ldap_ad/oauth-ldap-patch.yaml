@@ -11,11 +11,11 @@
           - cn
         preferredUsername:
           - sAMAccountName
-      bindDN: 'CN=User OpenShift RedHat - AD,OU=Usuários de Serviços Administrativos,OU=ADMINISTRADORES,OU=DETRAN,DC=DETRANDOM,DC=TRAN'
+      bindDN: 'CN=User OpenShift RedHat - AD,OU=Usuários de Serviços Administrativos,OU=ADMINISTRADORES,OU=Dx,DC=Dx,DC=Tx'
       bindPassword:
         name: ldap-secret
       insecure: true
-      url: 'ldap:/xxxx:389/OU=DETRAN,DC=XXXX,DC=TXXX?sAMAccountName?sub?(&(objectclass=*)(memberOf:1.2.840.113556.1.4.1941:=CN=OSRH-AUTENTICACAO,OU=ADMINISTRADORES,OU=XX,DC=DXXX,DC=TRAN))'
+      url: 'ldap:/xxxx:389/OU=XXX,DC=XXXX,DC=TXXX?sAMAccountName?sub?(&(objectclass=*)(memberOf:1.2.840.113556.1.4.1941:=CN=OSRH-AUTENTICACAO,OU=ADMINISTRADORES,OU=XX,DC=DXXX,DC=TRAN))'
     mappingMethod: claim
     name: AD-XXX
     type: LDAP
