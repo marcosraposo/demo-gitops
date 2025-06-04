@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openshift-compliance
+spec:
+  destination:
+    namespace: openshift-compliance
+    name: ocp-prod
+  source:
+    path: application/openshift-compliance/
+    repoURL: https://git.detran.ba.gov.br/PlataformaBaixa/Gitops-infra
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
