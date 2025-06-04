@@ -15,7 +15,7 @@
       bindPassword:
         name: ldap-secret
       insecure: true
-      url: 'ldap://detrandom.tran:389/OU=DETRAN,DC=DETRANDOM,DC=TRAN?sAMAccountName?sub?(&(objectclass=*)(memberOf:1.2.840.113556.1.4.1941:=CN=OSRH-AUTENTICACAO,OU=ADMINISTRADORES,OU=DETRAN,DC=DETRANDOM,DC=TRAN))'
+      url: 'ldap:/xxxx:389/OU=DETRAN,DC=XXXX,DC=TXXX?sAMAccountName?sub?(&(objectclass=*)(memberOf:1.2.840.113556.1.4.1941:=CN=OSRH-AUTENTICACAO,OU=ADMINISTRADORES,OU=XX,DC=DXXX,DC=TRAN))'
     mappingMethod: claim
-    name: AD-DETRAN
+    name: AD-XXX
     type: LDAP
