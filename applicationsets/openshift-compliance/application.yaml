@@ -5,10 +5,10 @@ metadata:
 spec:
   destination:
     namespace: openshift-compliance
-    name: ocp-prod
+    name: malima
   source:
-    path: application/openshift-compliance/
-    repoURL: https://git.detran.ba.gov.br/PlataformaBaixa/Gitops-infra
+    path: applicationsets/openshift-compliance/
+    repoURL: https://github.com/marcosraposo/demo-gitops
     targetRevision: HEAD
   sources: []
   project: default
