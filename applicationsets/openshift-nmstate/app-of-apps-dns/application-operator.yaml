@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: openshift-nmstate-operator
+  name: openshift-nmstate-operator-masrl
 spec:
   destination:
     namespace: openshift-nmstate
-    name: malima
+    name: masrl
   source:
     path: applicationsets/openshift-nmstate/operator/
     repoURL: https://github.com/marcosraposo/demo-gitops.git
