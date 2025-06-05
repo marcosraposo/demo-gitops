@@ -7,7 +7,7 @@ spec:
     namespace: openshift-compliance
     name: malima
   source:
-    path: applicationsets/openshift-compliance/
+    path: applicationsets/openshift-compliance/operator
     repoURL: https://github.com/marcosraposo/demo-gitops
     targetRevision: HEAD
   sources: []
