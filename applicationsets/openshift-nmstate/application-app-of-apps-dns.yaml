@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: openshift-nmstate
+  name: app-of-apps-dns
 spec:
   destination:
-    namespace: openshift-nmstate
-    name: malima
+    namespace: openshift-gitops
+    name: in-cluster
   source:
-    path: application/openshift-nmstate/manifests/
+    path: application/openshift-nmstate/app-of-apps-dns/
     repoURL: https://github.com/marcosraposo/demo-gitops.git
     targetRevision: HEAD
   sources: []
@@ -16,5 +16,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true

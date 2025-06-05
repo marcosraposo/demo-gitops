@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openshift-nmstate-instance
+spec:
+  destination:
+    namespace: openshift-nmstate
+    name: malima
+  source:
+    path: application/openshift-nmstate/instance/
+    repoURL: https://github.com/marcosraposo/demo-gitops.git
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
