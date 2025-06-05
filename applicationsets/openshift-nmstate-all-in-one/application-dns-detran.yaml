@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-of-apps-dns
+  name: openshift-nmstate-dns-detran
 spec:
   destination:
-    namespace: openshift-gitops
-    name: in-cluster
+    namespace: openshift-nmstate
+    name: malima
   source:
-    path: application/openshift-nmstate/app-of-apps-dns/
+    path: application/openshift-nmstate-all-in-one/operator-e-dns/
     repoURL: https://github.com/marcosraposo/demo-gitops.git
     targetRevision: HEAD
   sources: []
@@ -17,9 +17,4 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-  #  - CreateNamespace=true
-    - SkipDryRunOnMissingResource=true
-  #  - Delete=confirm
-    - ApplyOutOfSyncOnly=true
-  #  - PruneLast=true
-  #  - Replace=true
+      - CreateNamespace=true
