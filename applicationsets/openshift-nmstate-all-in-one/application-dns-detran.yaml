@@ -7,7 +7,7 @@ spec:
     namespace: openshift-nmstate
     name: malima
   source:
-    path: application/openshift-nmstate-all-in-one/operator-e-dns/
+    path: applicationsets/openshift-nmstate-all-in-one/operator-e-dns/
     repoURL: https://github.com/marcosraposo/demo-gitops.git
     targetRevision: HEAD
   sources: []
@@ -17,9 +17,8 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-      #- CreateNamespace=true
+      - CreateNamespace=true
       - SkipDryRunOnMissingResource=true
-#          - Delete=confirm
       - ApplyOutOfSyncOnly=true
-        #  - PruneLast=true
-        #  - Replace=true              
+      - PruneLast=true
+      - Replace=true              

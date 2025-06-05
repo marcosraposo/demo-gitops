@@ -7,7 +7,7 @@ spec:
     namespace: openshift-nmstate
     name: malima
   source:
-    path: application/openshift-nmstate/dns-detran/
+    path: applicationsets/openshift-nmstate/dns-detran/
     repoURL: https://github.com/marcosraposo/demo-gitops.git
     targetRevision: HEAD
   sources: []
