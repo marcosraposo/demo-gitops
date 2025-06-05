@@ -5,7 +5,7 @@ metadata:
 spec:
   destination:
     namespace: openshift-nmstate
-    server: https://kubernetes.default.svc
+    name: malima
   source:
     path: application/openshift-nmstate/manifests/
     repoURL: https://github.com/marcosraposo/demo-gitops.git

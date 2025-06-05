@@ -1,0 +1,14 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: InstallPlan
+metadata:
+  name: install-nmstate
+  namespace: openshift-nmstate
+  ownerReferences:
+  - apiVersion: operators.coreos.com/v1alpha1
+    blockOwnerDeletion: false
+    controller: false
+    kind: Subscription
+    name: kubernetes-nmstate-operator
+spec:
+  approval: Manual
+  approved: true
