@@ -7,7 +7,7 @@ spec:
     namespace: openshift-nmstate
     name: malima
   source:
-    path: applicationsets/openshift-nmstate-all-in-one/operator-e-dns/
+    path: applicationsets/openshift-nmstate-all-in-one/dns/
     repoURL: https://github.com/marcosraposo/demo-gitops.git
     targetRevision: HEAD
   sources: []
