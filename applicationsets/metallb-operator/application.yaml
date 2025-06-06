@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openshift-metallb-operator
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: metallb-system
+    name: malima
+  source:
+    path: applicationsets/metallb-operator/operator
+    repoURL: https://github.com/marcosraposo/demo-gitops
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
