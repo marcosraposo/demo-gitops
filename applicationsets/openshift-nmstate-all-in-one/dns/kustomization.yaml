@@ -4,8 +4,8 @@ kind: Kustomization
 namespace: openshift-nmstate
 
 resources:
-  - ../operator/
-  - ../instance/
+  - ../operator
+  - ../instance
   - master-dns.yaml
   - worker-dns.yaml
 
