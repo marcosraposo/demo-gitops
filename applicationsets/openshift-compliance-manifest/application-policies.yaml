@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: openshift-compliance
+spec:
+  destination:
+    namespace: openshift-compliance
+    name: malima
+  source:
+    path: applicationsets/openshift-compliance/operator
+    repoURL: https://github.com/marcosraposo/demo-gitops
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
