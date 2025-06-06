@@ -1,0 +1,17 @@
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: master-dns-detran
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"  
+spec:
+  desiredState:
+    dns-resolver:
+      config:
+        search:
+          - detrandom.tran
+        server:
+          - 10.21.246.3
+          - 10.21.246.10
+  nodeSelector:
+    node-role.kubernetes.io/master: ''
