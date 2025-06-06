@@ -8,7 +8,5 @@ resources:
   - operator-group.yaml
   - subscription.yaml
   - instance.yaml
-  - worker-dns.yaml
-  - master-dns.yaml
   
 
