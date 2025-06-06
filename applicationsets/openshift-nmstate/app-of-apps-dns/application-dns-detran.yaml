@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: openshift-nmstate-dns-detran-masrl
+  name: openshift-nmstate-dns-detran-malima
 spec:
   destination:
     namespace: openshift-nmstate
-    name: masrl
+    name: malima
   source:
     path: applicationsets/openshift-nmstate/dns-detran/
     repoURL: https://github.com/marcosraposo/demo-gitops.git
