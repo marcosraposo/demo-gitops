@@ -4,9 +4,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 namespace: openshift-nmstate
 
 resources:
-  - ../operator/namespace.yaml
+  
   - ../operator/operator-group.yaml
   - ../operator/subscription.yaml
   - ../instance/instance.yaml  
+  - ../operator/namespace.yaml
   - master-dns.yaml
   - worker-dns.yaml
