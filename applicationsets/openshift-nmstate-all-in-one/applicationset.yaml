@@ -17,7 +17,7 @@ spec:
     metadata:
       annotations:
         argocd.argoproj.io/manifest-generate-paths: ".;.."
-      name: "nmstate-{{appName}}-masrl"
+      name: "nmstate-{{appName}}-malima"
     spec:
       project: default
       source:
@@ -25,13 +25,13 @@ spec:
         targetRevision: main
         path: "{{path}}"
       destination:
-        name: masrl
+        name: in-cluster
         namespace: openshift-nmstate
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
-      - SkipDryRunOnMissingResource=true
-      - ApplyOutOfSyncOnly=true 
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+          - SkipDryRunOnMissingResource=true
+          - ApplyOutOfSyncOnly=true 
