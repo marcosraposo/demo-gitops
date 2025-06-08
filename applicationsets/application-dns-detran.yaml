@@ -21,4 +21,5 @@ spec:
       - SkipDryRunOnMissingResource=true
       - ApplyOutOfSyncOnly=true
       - PruneLast=true
-      - Replace=true              
+      - Replace=true            
+      - Validate=false  

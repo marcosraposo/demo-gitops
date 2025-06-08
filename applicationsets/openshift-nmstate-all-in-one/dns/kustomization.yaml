@@ -1,0 +1,10 @@
+ind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+namespace: openshift-nmstate
+
+resources:
+  - ../operator
+  - ../instance
+  - master-dns.yaml
+  - worker-dns.yaml
