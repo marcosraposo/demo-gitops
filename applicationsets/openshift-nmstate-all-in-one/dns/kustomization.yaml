@@ -5,9 +5,7 @@ namespace: openshift-nmstate
 
 resources:
   
-  - ../operator/operator-group.yaml
-  - ../operator/subscription.yaml
-  - ../instance/instance.yaml  
-  - ../operator/namespace.yaml
+  - ../operator/
+  - ../instance/
   - master-dns.yaml
   - worker-dns.yaml
