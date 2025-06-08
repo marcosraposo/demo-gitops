@@ -7,10 +7,9 @@ spec:
     namespace: openshift-nmstate
     name: malima
   source:
-    path: applicationsets/openshift-nmstate-all-in-one/
-    repoURL: https://github.com/marcosraposo/demo-gitops.git
-    targetRevision: HEAD
-  sources: []
+    repoURL: https://github.com/marcosraposo/demo-gitops.git    
+    path: applicationsets/openshift-nmstate-all-in-one/operator/
+    targetRevision: HEAD  
   project: default
   syncPolicy:
     automated:
@@ -20,6 +19,4 @@ spec:
       - CreateNamespace=true
       - SkipDryRunOnMissingResource=true
       - ApplyOutOfSyncOnly=true
-      - PruneLast=true
-      - Replace=true            
-      - Validate=false  
+

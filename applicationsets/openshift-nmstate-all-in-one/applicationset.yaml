@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: nmstate
+  namespace: openshift-gitops
+spec:
+  generators:
+  - list:
+      elements:
+      - appName: operator
+        path: applicationsets/openshift-nmstate-all-in-one/operator/
+      - appName: instance
+        path: applicationsets/openshift-nmstate-all-in-one/instance/        
+      - appName: dns-detran
+        path: applicationsets/openshift-nmstate-all-in-one/dns/ 
+  template:
+    metadata:
+      name: "nmstate-{{appName}}-masrl"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/marcosraposo/demo-gitops.git 
+        targetRevision: main
+        path: "{{path}}"
+      destination:
+        name: masrl
+        namespace: openshift-nmstate
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true      
+        automated:
+          selfHeal: true
+          prune: true       
