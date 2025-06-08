@@ -4,6 +4,7 @@ metadata:
   name: kubernetes-nmstate-operator 
   namespace: openshift-nmstate
   annotations: 
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   channel: stable
   installPlanApproval: Automatic
