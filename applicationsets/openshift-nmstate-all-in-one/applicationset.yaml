@@ -9,14 +9,12 @@ spec:
       elements:
       - appName: operator
         path: applicationsets/openshift-nmstate-all-in-one/operator/
-      - appName: instance
-        path: applicationsets/openshift-nmstate-all-in-one/instance/        
+#      - appName: instance
+#        path: applicationsets/openshift-nmstate-all-in-one/instance/        
       - appName: dns-detran
         path: applicationsets/openshift-nmstate-all-in-one/dns/ 
   template:
     metadata:
-      annotations:
-        argocd.argoproj.io/manifest-generate-paths: ".;.."
       name: "nmstate-{{appName}}-malima"
     spec:
       project: default

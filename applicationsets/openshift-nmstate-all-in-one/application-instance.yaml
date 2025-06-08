@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mstate-dns
+  name: mstate-instance
 spec:
   destination:
     namespace: openshift-nmstate
     name: malima
   source:
     repoURL: https://github.com/marcosraposo/demo-gitops.git    
-    path: applicationsets/openshift-nmstate-all-in-one/dns
+    path: applicationsets/openshift-nmstate-all-in-one/instance
     targetRevision: HEAD  
   project: default
   syncPolicy:
