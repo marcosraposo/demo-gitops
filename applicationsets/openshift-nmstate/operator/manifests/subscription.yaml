@@ -8,4 +8,5 @@ spec:
   name: kubernetes-nmstate-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-  
+  startingCSV: kubernetes-nmstate-operator.4.16.0.202505060805
+
