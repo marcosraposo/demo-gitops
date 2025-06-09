@@ -16,9 +16,9 @@ spec:
   template:
     metadata:
       name: "nmstate-{{appName}}-malima"
-      labels:
-        app.kubernetes.io/managed-by: openshift-gitops
-        app.kubernetes.io/part-of: openshift-nmstate      
+#      labels:
+#        app.kubernetes.io/managed-by: openshift-gitops
+#        app.kubernetes.io/part-of: openshift-nmstate      
 
     spec:
       project: default
