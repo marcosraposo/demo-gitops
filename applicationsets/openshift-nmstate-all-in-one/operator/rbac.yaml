@@ -2,10 +2,11 @@
    kind: ClusterRoleBinding
    metadata:
      name: argocd-nmstate-permissions-binding
+     namespace: openshift-nmstate
    roleRef:
      apiGroup: rbac.authorization.k8s.io
      kind: ClusterRole
-     name: Admin
+     name: admin
    subjects:
    - kind: ServiceAccount
      name: openshift-gitops-argocd-application-controller
