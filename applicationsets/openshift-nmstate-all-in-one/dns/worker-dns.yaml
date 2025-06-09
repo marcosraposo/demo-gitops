@@ -4,6 +4,8 @@ metadata:
   name: worker-dns-detran
   namespace: openshift-nmstate
 spec:
+  nodeSelector:
+    node-role.kubernetes.io/worker: ''
   desiredState:
     dns-resolver:
       config:
@@ -12,5 +14,3 @@ spec:
         server:
           - 10.21.246.3
           - 10.21.246.10
-  nodeSelector:
-    node-role.kubernetes.io/worker: ''
