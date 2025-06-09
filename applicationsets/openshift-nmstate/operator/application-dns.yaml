@@ -4,7 +4,7 @@ metadata:
   name: nmstate-operator
 spec:
   destination:
-    namespace: openshift-gitops
+    namespace: openshift-nmstate
     name: malima
   source:
     path: applicationsets/openshift-nmstate/operator/manifests

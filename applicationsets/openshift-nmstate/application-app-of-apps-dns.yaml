@@ -5,16 +5,15 @@ metadata:
 spec:
   destination:
     namespace: openshift-gitops
-    name: in-cluster
-  source: {}
+    name: in-cluster  
   sources:
-    - path: application/openshift-nmstate/operator/application-dns.yaml
+    - path: applicationsets/openshift-nmstate/operator/
       repoURL: https://github.com/marcosraposo/demo-gitops.git
       targetRevision: HEAD
-    - path: application/openshift-nmstate/instance/application-instance.yaml
+    - path: applicationsets/openshift-nmstate/instance/
       repoURL: https://github.com/marcosraposo/demo-gitops.git
       targetRevision: HEAD
-    - path: application/openshift-nmstate/dns-detran/application-dns.yaml
+    - path: applicationsets/openshift-nmstate/dns-detran/
       repoURL: https://github.com/marcosraposo/demo-gitops.git
       targetRevision: HEAD          
   project: default

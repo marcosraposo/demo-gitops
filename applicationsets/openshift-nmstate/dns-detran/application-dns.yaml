@@ -4,7 +4,7 @@ metadata:
   name: dns-detran
 spec:
   destination:
-    namespace: openshift-gitops
+    namespace: openshift-nmstate
     name: malima
   source:
     path: applicationsets/openshift-nmstate/dns-detran/manifests
