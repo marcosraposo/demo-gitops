@@ -1,6 +1,5 @@
-apiVersion: nmstate.io/v1
 kind: NMState
+apiVersion: nmstate.io/v1
 metadata:
-  labels:
-    app.kubernetes.io/instance: nmstate-instance-malima
   name: nmstate
+spec: {}
