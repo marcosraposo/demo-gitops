@@ -9,13 +9,17 @@ spec:
       elements:
       - appName: operator
         path: applicationsets/openshift-nmstate-all-in-one/operator/
-#      - appName: instance
-#        path: applicationsets/openshift-nmstate-all-in-one/instance/        
+      - appName: instance
+        path: applicationsets/openshift-nmstate-all-in-one/instance/        
       - appName: dns-detran
         path: applicationsets/openshift-nmstate-all-in-one/dns/ 
   template:
     metadata:
       name: "nmstate-{{appName}}-malima"
+      labels:
+        app.kubernetes.io/managed-by: openshift-gitops
+        app.kubernetes.io/part-of: openshift-nmstate      
+
     spec:
       project: default
       source:
@@ -31,5 +35,3 @@ spec:
           selfHeal: true
         syncOptions:
           - CreateNamespace=true
-          - SkipDryRunOnMissingResource=true
-          - ApplyOutOfSyncOnly=true 
