@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dns-detran
+spec:
+  destination:
+    namespace: openshift-gitops
+    name: malima
+  source:
+    path: applicationsets/openshift-nmstate/dns-detran/manifests
+    repoURL: https://github.com/marcosraposo/demo-gitops.git
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+

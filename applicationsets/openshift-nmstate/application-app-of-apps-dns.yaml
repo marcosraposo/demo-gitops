@@ -6,11 +6,17 @@ spec:
   destination:
     namespace: openshift-gitops
     name: in-cluster
-  source:
-    path: application/openshift-nmstate/app-of-apps-dns/
-    repoURL: https://github.com/marcosraposo/demo-gitops.git
-    targetRevision: HEAD
-  sources: []
+  source: {}
+  sources:
+    - path: application/openshift-nmstate/operator/application-dns.yaml
+      repoURL: https://github.com/marcosraposo/demo-gitops.git
+      targetRevision: HEAD
+    - path: application/openshift-nmstate/instance/application-instance.yaml
+      repoURL: https://github.com/marcosraposo/demo-gitops.git
+      targetRevision: HEAD
+    - path: application/openshift-nmstate/dns-detran/application-dns.yaml
+      repoURL: https://github.com/marcosraposo/demo-gitops.git
+      targetRevision: HEAD          
   project: default
   syncPolicy:
     automated:

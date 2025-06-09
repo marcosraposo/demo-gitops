@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nmstate-operator
+spec:
+  destination:
+    namespace: openshift-gitops
+    name: malima
+  source:
+    path: applicationsets/openshift-nmstate/operator/manifests
+    repoURL: https://github.com/marcosraposo/demo-gitops.git
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
